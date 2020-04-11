@@ -8,13 +8,10 @@ class SolutionTest {
     private final Solution solution = new Solution();
 
     @Test
-    void isMatch() {
-        assertTrue(solution.isMatch("aa", "a*"));
-        assertTrue(solution.isMatch("aab", "c*a*b"));
-        assertFalse(solution.isMatch("aa", "a"));
-        assertTrue(solution.isMatch("bbbba", ".*a*a"));
-        assertFalse(solution.isMatch("aaaaaaaaaaaaab","a*a*a*a*a*a*a*a*a*a*c"));
-        assertTrue(solution.isMatch("","a*a*a*a*a*a*a*a*a*a*"));
-
+    void isPalindrome() {
+        assertFalse(solution.isPalindrome(10));
+        assertTrue(solution.isPalindrome(0));
+        assertTrue(solution.isPalindrome(121));
+        assertFalse(solution.isPalindrome(-121));
     }
 }
