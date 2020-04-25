@@ -21,4 +21,12 @@ public class ListNode {
         }
         return head;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (! (obj instanceof ListNode)) {
+            return false;
+        }
+        return (new ListNodeComparator()).compare(this, (ListNode) obj) == 0;
+    }
 }
