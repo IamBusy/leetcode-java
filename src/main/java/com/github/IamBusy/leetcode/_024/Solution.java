@@ -9,18 +9,15 @@ public class Solution {
         }
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode fst = dummy, cur = head.next;
-        while (cur!=null) {
-            ListNode tmp = fst.next;
-            ListNode tail = cur.next;
-            fst.next.next = cur.next;
-            fst.next = cur;
-            cur.next = tmp;
-            cur = tail;
-            if (cur != null) {
-                cur = cur.next;
-                fst = tmp;
-            }
+        ListNode cur = dummy;
+        while (cur.next != null && cur.next.next != null) {
+            ListNode fst = cur.next;
+            ListNode sec = cur.next.next;
+            ListNode tail = cur.next.next.next;
+            cur.next = sec;
+            fst.next = tail;
+            sec.next = fst;
+            cur = fst;
         }
         return dummy.next;
     }
