@@ -22,6 +22,18 @@ public class ListNode {
         return head;
     }
 
+    public static ListNode copyFrom(ListNode l1) {
+        ListNode cur = l1;
+        ListNode dummy = new ListNode(0);
+        ListNode newCur = dummy;
+        while (cur!=null) {
+            newCur.next = new ListNode(cur.val);
+            cur = cur.next;
+            newCur = newCur.next;
+        }
+        return dummy.next;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (! (obj instanceof ListNode)) {
