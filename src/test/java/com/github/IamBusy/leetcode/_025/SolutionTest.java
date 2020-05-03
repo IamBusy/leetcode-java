@@ -10,9 +10,9 @@ class SolutionTest {
 
     @Test
     void reverseKGroup() {
-        ListNode l1 = ListNode.fromArray(1, 2, 3, 4, 5);
         ListNode l2 = ListNode.fromArray(2, 1, 4, 3, 5);
         ListNode l3 = ListNode.fromArray(3, 2, 1, 4, 5);
-        assertEquals(solution.reverseKGroup(l1, 2), l2);
+        assertEquals(solution.reverseKGroup(ListNode.fromArray(1, 2, 3, 4, 5), 2), l2);
+        assertEquals(solution.reverseKGroup(ListNode.fromArray(1, 2, 3, 4, 5), 3), l3);
     }
 }
